@@ -1,0 +1,25 @@
+penny = .01
+nickel = .05
+dime = .1
+quarter = .25
+half_dollar = .5
+dollar = 1
+
+money_Put_In = float(input("Enter money: "))
+value_of_item = float(input("Value of item: "))
+change = money_Put_In - value_of_item
+
+change_In_Dollars = change//dollar
+change_In_Half_Dollars = (change-change_In_Dollars)//half_dollar
+change_In_Quarters = (change-(change_In_Dollars+(change_In_Half_Dollars*half_dollar)))//quarter
+change_In_Dimes = (change-(change_In_Dollars+(change_In_Half_Dollars*half_dollar)+(change_In_Quarters*quarter)))//dime
+change_In_Nickels = (change-(change_In_Dollars+(change_In_Half_Dollars*half_dollar)+(change_In_Quarters*quarter)+(change_In_Dimes*dime)))//nickel
+change_In_Pennies = (change-(change_In_Dollars+(change_In_Half_Dollars*half_dollar)+(change_In_Quarters*quarter)+(change_In_Dimes*dime)+(change_In_Nickels*nickel)))//penny
+
+print("Your change is",change)
+print(change_In_Dollars,"dollars")
+print(change_In_Half_Dollars,"half dollars")
+print(change_In_Quarters, "quarters")
+print(change_In_Dimes, "dimes")
+print(change_In_Nickels, "nickels")
+print(change_In_Pennies, "pennies")
